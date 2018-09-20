@@ -13,8 +13,7 @@ import feathersAuthClient from '@feathersjs/authentication-client';
 @Injectable()
 export class Feathers {
   private _feathers = feathers();                     // init socket.io
-  // private _socket = io('http://192.168.86.100:3030');      // init feathers
-  private _socket = io('http://192.168.86.100:3030');      // init feathers
+  private _socket = io('http://localhost:3030');      // init feathers
 
   constructor() {
     this._feathers
