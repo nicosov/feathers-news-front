@@ -1,0 +1,43 @@
+<div class="header row justify-content-center mb-3 py-2">
+  <div class="col-10 row justify-space-between">
+    <div class="col-4"></div>
+    <div class="col-4 text-center">
+      <h1>Wiz'News</h1>
+    </div>
+    <div class="col-4 d-flex align-items-center justify-content-end">
+      <button
+        class="btn btn-outline-danger"
+        (click)="onLogout()"
+      >
+        Déconnexion
+      </button>
+    </div>
+  </div>
+</div>
+<div class="col-4 col-md-3 sidebar">
+  <div class="row">
+    <form class="col-12 form-group" (submit)="sendMessage(message.value); message.value = ''">
+      <label class="d-block">
+        New post
+        <textarea #message type="text" name="text" class="form-control" rows="5"></textarea>
+      </label>
+      <button type="submit" class="btn btn-primary w-100">Send</button>
+    </form>
+  </div>
+</div>
+
+<div class="offset-md-3 offset-4 col-md-9 col-8 row news justify-content-center">
+  <div class="col-12 col-md-8">
+    <div *ngIf="posts.length === 0" class="text-center mt-3" >No posts.</div>
+    <div *ngFor="let post of posts" class="card mb-2">
+      <div class="card-body">
+        <h5 class="card-title"> {{ post.email }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+          <small>{{ post.createdAt | date: 'dd/MM/yyyy HH:mm' }}</small>
+        </h6>
+        <p class="card-text">{{ post.text }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+

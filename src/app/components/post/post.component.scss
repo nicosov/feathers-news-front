@@ -1,0 +1,32 @@
+.header {
+  height: 75px;
+  border-bottom: 1px solid #e5e5e5;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background: white;
+}
+
+.news {
+  padding-top: 75px;
+}
+
+.sidebar {
+  padding-top: 15px;
+  position: fixed;
+  top: 75px;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.card {
+  border: none;
+  border-radius: initial;
+  border-bottom: solid 1px #e5e5e5;
+
+  &:last-child:not(:first-child) {
+    border: none;
+  }
+}
